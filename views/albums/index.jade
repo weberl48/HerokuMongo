@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+  div(class="container")
+    h1 Albums
+    a(href="/albums/new") New Album
+    table
+      thead
+        tr
+          th Genre
+          th Artist
+          th Album
+          th Explicit
+      tbody
+        for album in allAlbums
+          tr
+            td
+              a(href='/albums/' + album._id)= album.genre
+            td
+              a(href='/albums/' + album._id)= album.artist
+            td
+              a(href='/albums/' + album._id)= album.name
+            td
+              a(href='/albums/' + album._id)= album.explicit

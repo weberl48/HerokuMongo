@@ -1,0 +1,30 @@
+extends ../layout
+block content
+  div(class="container")
+    fieldset
+      form(action="/albums/" + theAlbum._id + '/update', method="post")
+        legend Edit
+          p
+          label(for="artist") Artist 
+          input(type="text" name="artist" placeholder="replace")
+          p
+          label(for="album_name") Album 
+          input(type="text" name="album_name" placeholder="replace")
+          p
+          label(for="genre") Genre 
+          select(id="genre" name="genre")
+            option(value= "jazz") Jazz
+            option(value="rock") Rock
+            option(value="blues") Blues
+          p Stars
+          input(type="radio" value=1)
+          input(type="radio" value=2)
+          input(type="radio" value=3)
+          input(type="radio" value=4)
+          input(type="radio" value=5)
+          p
+          label(for="explicit") Contains Explicit Lyrics
+          input(type="checkbox" name="explicit" )
+          p
+            input(type="submit" value="Update Album") 
+            a(href='/albums/')  Cancel
